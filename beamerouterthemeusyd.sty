@@ -1,0 +1,13 @@
+\mode<presentation>
+
+\defbeamertemplate*{frametitle}{usyd}[1][]
+{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1.8cm,right]{frametitle}
+        \begin{tikzpicture}
+            \useasboundingbox[fill=white] (0,0) rectangle(\the\paperwidth, 1.8);
+            \fill[usydblue] (1.2,0) rectangle(\paperwidth-0.3cm, 1.5);
+            \node[inner sep=0pt] (logo) at (1.5,0.9) {\includegraphics[width=2.4cm]{usyd.png}};
+            \node[anchor=east, white, font=\usebeamerfont{frametitle}] at (\paperwidth-0.6cm ,0.7){\insertframetitle};
+        \end{tikzpicture}
+    \end{beamercolorbox}
+}

@@ -1,0 +1,43 @@
+\mode<presentation>
+
+\setbeamertemplate{background}
+{%
+    \begin{tikzpicture}
+        \useasboundingbox(0,0) rectangle(\the\paperwidth, \the\paperheight);
+        \fill[color=usydred] (1.5,2) rectangle (\the\paperwidth, \the\paperheight);
+        \fill[color=usydblue] (1.5,0.5) rectangle (5.5, 4);
+        \node[inner sep=0pt] (logo) at (1.5, 1.1) {\includegraphics[width=2.4cm]{usyd.png}};
+    \ifnum\thepage>1\relax%
+      \fill[white,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
+      \fi
+    \end{tikzpicture}
+}
+
+\defbeamertemplate*{title page}{usyd}[1][]
+{%
+    \vskip-1cm
+    \begin{beamercolorbox}[leftskip=1.5cm, rightskip=1cm, #1]{title page header}
+        \usebeamerfont{title} \inserttitle\par%
+        \vskip1cm
+        \usebeamerfont{subtitle}\insertsubtitle\par%
+    \end{beamercolorbox}
+    \vfill
+    \begin{beamercolorbox}[leftskip=6cm, rightskip=0.5cm, right, #1]{author}
+        \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{usyd}
+{%
+    \begin{beamercolorbox}[ht=2.5ex,dp=3.75ex,center]{section in head/foot}
+        \ifnum\thepage>1%
+        \begin{tikzpicture}
+            \draw[usydred] (0.3, 2.5) -- (\paperwidth-0.3cm, 2.5);
+        \end{tikzpicture}
+        \vskip3px
+        \insertnavigation{0.90\paperwidth}
+      \fi
+    \end{beamercolorbox}%
+}%
+
+\mode<all>

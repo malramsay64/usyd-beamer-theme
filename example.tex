@@ -1,0 +1,41 @@
+\documentclass[aspectratio=169, 22pt]{beamer}
+
+\usepackage{amsmath}
+
+\title{$\tau$ vs $\pi$ is a really long and interesting argument to have}
+%\subtitle{It is mostly a notational argument}
+\date{today}
+\author[Malcolm]{Malcolm Ramsay}
+
+\definecolor{usydred}{rgb}{1,0,0}
+
+\usetheme{usyd}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+\section{Argument}
+\subsection{$\tau$ is better}
+
+\begin{frame}{Why use $\tau$ when there is $\pi$}
+    \begin{theorem}
+        $\tau$ is great when dealing with circles
+    \end{theorem}
+
+    \begin{enumerate}
+            \item<1-> Fourier transforms
+                \begin{equation}
+                    \hat f(\zeta) = \int_{-\inf}^{+\inf} f(x) e^{-2\pi ix\zeta} dx
+                \end{equation}
+            \item<2-> A simple pendulum
+                \begin{equation}
+                    T \approx 2\pi \sqrt{\frac{L}{g}}
+                \end{equation}
+    \end{enumerate}
+\end{frame}
+
+
+\end{document}
