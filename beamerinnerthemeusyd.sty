@@ -6,11 +6,12 @@
     \ifnum\thepage=1\relax%
     \useasboundingbox (0,0) rectangle(\the\paperwidth, \the\paperheight);
     \fill[color=usydred] (0,0) rectangle (0.5*\the\paperwidth, \the\paperheight);
+    \fill[color=\USYD@titlegraphicbackground] (0.5*\the\paperwidth,0) rectangle (\the\paperwidth, \the\paperheight);
     \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight) {\includegraphics[width=0.5\paperwidth]{\USYD@titlegraphic}};
     \hskip-10pt
     \node[inner sep=0pt] (logo) at (2.2, 1.2) {\insertlogo};
     \else
-    \fill[white,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
+    \fill[usydwhite,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
     \fi
   \end{tikzpicture}
 }
