@@ -2,42 +2,62 @@
 
 \setbeamertemplate{background}
 {%
-    \begin{tikzpicture}
-        \useasboundingbox(0,0) rectangle(\the\paperwidth, \the\paperheight);
-        \fill[color=usydred] (1.5,2) rectangle (\the\paperwidth, \the\paperheight);
-        \fill[color=usydblue] (1.5,0.5) rectangle (5.5, 4);
-        \node[inner sep=0pt] (logo) at (1.5, 1.1) {\includegraphics[width=2.4cm,natwidth=258,natheight=129]{usyd.png}};
-    \ifnum\thepage>1\relax%
-      \fill[white,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
-      \fi
-    \end{tikzpicture}
+  \begin{tikzpicture}
+    \ifnum\thepage=1\relax%
+    \useasboundingbox (0,0) rectangle(\the\paperwidth, \the\paperheight);
+    \fill[color=usydred] (0,0) rectangle (0.5*\the\paperwidth, \the\paperheight);
+    \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight) {\includegraphics[width=0.5\paperwidth]{\USYD@titlegraphic}};
+    \hskip-10pt
+    \node[inner sep=0pt] (logo) at (2.2, 1.2) {\insertlogo};
+    \else
+    \fill[white,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
+    \fi
+  \end{tikzpicture}
 }
 
 \defbeamertemplate*{title page}{usyd}[1][]
 {%
-    \vskip-1cm
-    \begin{beamercolorbox}[leftskip=1.5cm, rightskip=1cm, #1]{title page header}
-        \usebeamerfont{title} \inserttitle\par%
-        \vskip1cm
-        \usebeamerfont{subtitle}\insertsubtitle\par%
-    \end{beamercolorbox}
-    \vfill
-    \begin{beamercolorbox}[leftskip=6cm, rightskip=0.5cm, right, #1]{author}
+    \newlength\beamertitlebox
+    \setlength\beamertitlebox{\dimexpr0.5\paperwidth-\Gm@lmargin}
+    \begingroup
+    \hskip-10pt
+    \begin{beamercolorbox}[sep=0pt, wd=\beamertitlebox, #1]{title}
+        \usebeamerfont{title}\inserttitle\par%
+        \ifx\insertsubtitle\@empty\par%
+        \else%
+          \vskip0.25em%
+          {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        \fi%
+    \end{beamercolorbox}\vskip2em
+    \hskip-10pt
+    \begin{beamercolorbox}[sep=0pt, wd=\beamertitlebox, #1]{author}
         \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}\vskip1em
+    \hskip-10pt
+    \begin{beamercolorbox}[sep=0pt, wd=\beamertitlebox, #1]{date}
+        \usebeamerfont{date}\insertdate%
     \end{beamercolorbox}
+    \endgroup
 }
 
 \defbeamertemplate*{footline}{usyd}
 {%
-    \begin{beamercolorbox}[ht=2.5ex,dp=3.75ex,center]{section in head/foot}
-        \ifnum\thepage>1%
-        \begin{tikzpicture}
-            \draw[usydred] (0.3, 2.5) -- (\paperwidth-0.3cm, 2.5);
-        \end{tikzpicture}
-        \vskip3px
-        \insertnavigation{\paperwidth}
-      \fi
-    \end{beamercolorbox}%
+    %\begin{beamercolorbox}[ht=2.5ex,dp=3.75ex,center]{section in head/foot}
+        %\ifnum\thepage>1%
+        %\begin{tikzpicture}
+            %\draw[usydred] (0.3, 2.5) -- (\paperwidth-0.3cm, 2.5);
+        %\end{tikzpicture}
+        %\insertnavigation{0.99\paperwidth}
+      %\fi
+    %\end{beamercolorbox}%
 }%
+
+\defbeamertemplate*{logo}{usyd}
+{\includegraphics[width=2.4cm]{\USYD@logo}}
+
+
+\defbeamertemplate*{sidebar right}{usyd}{}
+
+\setbeamertemplate{navigation symbols}{}
 
 \mode<all>
