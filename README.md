@@ -21,3 +21,9 @@ change the colour of the background to whichever colour you want, where
 is white.
 
 
+Contributors
+------------
+
+Thanks to these people for their contributions
+
+- [finnconor](https://github.com/finnconor)
