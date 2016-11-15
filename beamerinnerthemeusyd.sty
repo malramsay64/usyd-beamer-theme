@@ -43,14 +43,12 @@
 
 \defbeamertemplate*{footline}{usyd}
 {%
-    %\begin{beamercolorbox}[ht=2.5ex,dp=3.75ex,center]{section in head/foot}
-        %\ifnum\thepage>1%
-        %\begin{tikzpicture}
-            %\draw[usydred] (0.3, 2.5) -- (\paperwidth-0.3cm, 2.5);
-        %\end{tikzpicture}
-        %\insertnavigation{0.99\paperwidth}
-      %\fi
-    %\end{beamercolorbox}%
+  \setbeamercolor{section in head/foot}{bg=}
+\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=4ex,leftskip=4em, rightskip=4em]{section in head/foot}%
+  \ifnum\thepage>1\relax%
+  University of Sydney\hfill\insertframenumber{}%
+  \fi
+\end{beamercolorbox}%
 }%
 
 \defbeamertemplate*{logo}{usyd}

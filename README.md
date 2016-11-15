@@ -43,6 +43,9 @@ change the colour of the background to whichever colour you want, where
 `<colour>` is a colour defined using the `\color{}` command. The default colour
 is white.
 
+Removing the footline can be done by adding the following code snippet
+
+    \setbeamertemplate{footline}{}
 
 Contributors
 ------------
