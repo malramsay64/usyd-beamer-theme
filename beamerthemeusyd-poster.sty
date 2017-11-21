@@ -1,0 +1,83 @@
+\ProvidesPackage{beamerthemeusyd-poster}  % this style was created by Malcolm Ramsay
+
+\selectcolormodel{cmyk}
+\RequirePackage{tcolorbox}
+
+\mode<presentation>
+
+\usecolortheme{usyd}
+\usefonttheme{usyd}
+
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+
+%% Define block for text in poster
+
+\defbeamertemplate*{block begin}{bordered}{%
+  \tcbset{colframe=usydred,boxsep=0.3em,boxrule=0.2em,colback=usydwhite,fonttitle=\bfseries}
+  \begin{tcolorbox}[title=\insertblocktitle]
+}
+
+\defbeamertemplate*{block end}{borderd}{%
+  \end{tcolorbox}
+  \vspace{1em}
+}
+
+
+%% Define the headline of the poster
+
+\setbeamertemplate{headline}{
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}
+      \begin{column}{0.2\linewidth}
+      \end{column}
+      \begin{column}{0.6\linewidth}
+        \vspace{3em}
+        \begin{center}
+          \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2em]}
+          \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[0.5em]}
+          \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[0.5em]}
+        \end{center}
+        \vspace{1em}
+      \end{column}
+      \begin{column}{0.2\linewidth}
+        \vspace{-6em}\\
+        \includegraphics[width=0.8\linewidth]{USYDLogo}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  \end{beamercolorbox}
+}
+
+
+%% The bottom line of the poster
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+  \end{beamercolorbox}
+
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1em,rightskip=1em]{author in head/foot}%
+    \hfill
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+  \end{beamercolorbox}
+}
+
+\mode<all>
+
+% adapt height of itemize rectangles
+\setbeamertemplate{itemize item}{\raisebox{0.12ex}{$\blacktriangleright$}\hskip0.1em}
+\setbeamertemplate{itemize subitem}{\raisebox{0.12ex}{$\triangleright$}\hskip0.1em}
+% or define your own template using \defbeamertemplate{itemize item}, see beameruserguide.pdf
+
+% equal font sizes for all levels
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+

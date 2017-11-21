@@ -24,6 +24,12 @@ before the `\usetheme` directive
     \def\input@path{{usyd-beamer-theme/}}
     \makeatother
 
+Then include the following after the `\usetheme` directive.
+
+    \graphicspath{{usyd-beamer-theme/}}
+
+This adds the path of the image to the path to look for files.
+
 Then using the theme is then as simple as adding the theme
 
     \mode<presentation>
@@ -46,6 +52,11 @@ is white.
 Removing the footline can be done by adding the following code snippet
 
     \setbeamertemplate{footline}{}
+
+Poster
+------
+
+There is also support for a poster using the beamerposter package with `\usetheme{usyd-poster}`.
 
 Contributors
 ------------
