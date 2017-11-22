@@ -33,7 +33,7 @@
       \begin{column}{0.2\linewidth}
       \end{column}
       \begin{column}{0.6\linewidth}
-        \vspace{3em}
+        \vspace{2.5em}
         \begin{center}
           \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2em]}
           \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[0.5em]}
@@ -56,9 +56,6 @@
 %% The bottom line of the poster
 
 \setbeamertemplate{footline}{
-  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
-  \end{beamercolorbox}
-
   \leavevmode%
   \begin{beamercolorbox}[ht=4ex,leftskip=1em,rightskip=1em]{author in head/foot}%
     \hfill
@@ -71,13 +68,5 @@
 
 \mode<all>
 
-% adapt height of itemize rectangles
-\setbeamertemplate{itemize item}{\raisebox{0.12ex}{$\blacktriangleright$}\hskip0.1em}
-\setbeamertemplate{itemize subitem}{\raisebox{0.12ex}{$\triangleright$}\hskip0.1em}
-% or define your own template using \defbeamertemplate{itemize item}, see beameruserguide.pdf
-
-% equal font sizes for all levels
-\setbeamerfont{itemize/enumerate body}{size=\normalsize}
-\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
-\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
-
+% Use numbered bibliography labels instead of image
+\setbeamertemplate{bibliography item}{\insertbiblabel}
