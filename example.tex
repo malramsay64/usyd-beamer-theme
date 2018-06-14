@@ -1,6 +1,8 @@
 \documentclass[aspectratio=169, 22pt]{beamer}
 
 \usepackage{amsmath}
+% slidedefs provides shorthand environments like {points,plain,centre} which also insert a subsection
+\usepackage{slidedefs}
 
 \title{The $\tau$ vs $\pi$ argument is really long and interesting}
 \subtitle{It is mostly a notational argument}
@@ -8,20 +10,22 @@
 \author[Malcolm]{Malcolm Ramsay}
 
 \usetheme{usyd}
+% Choose usyd-logobar instead of usyd to have navigation at the top of the slide
+%\usetheme{usyd-logobar}
 
 \titlegraphic{USYDTitle}
 \titlegraphicbackground{usydred}
 
 \begin{document}
 
-\begin{frame}
-  \titlepage{}
-\end{frame}
+\titleslide
+
+\part{A part of the argument}
+\partslide
 
 \section{Argument}
-\subsection{$\tau$ is better}
 
-\begin{frame}{Why use $\tau$ when there is $\pi$}
+\begin{plain}{Why use $\tau$ when there is $\pi$}
   \begin{block}{Theorem}
     $\tau$ is great when \href{http://blah}{dealing} with circles
   \end{block}
@@ -36,7 +40,12 @@
         T \approx 2\pi \sqrt{\frac{L}{g}}
       \end{equation}
   \end{enumerate}
-\end{frame}
+\end{plain}
+
+\begin{points}{Why not?}
+  \item A good question.
+\end{points}
+
 
 
 \end{document}

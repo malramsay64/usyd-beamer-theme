@@ -5,11 +5,12 @@
   \begin{tikzpicture}
     \ifnum\thepage=1\relax%
     \useasboundingbox (0,0) rectangle(\the\paperwidth, \the\paperheight);
-    \fill[color=usydred] (0,0) rectangle (0.5*\the\paperwidth, \the\paperheight);
+	% JOEL: the 1.1 is a hack
+    \fill[color=usydred] (0,0) rectangle (0.5*\the\paperwidth, 1.1*\the\paperheight);
     \fill[color=\USYD@titlegraphicbackground] (0.5*\the\paperwidth,0) rectangle (\the\paperwidth, \the\paperheight);
     \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight) {\includegraphics[width=0.5\paperwidth]{\USYD@titlegraphic}};
     \hskip-10pt
-    \node[inner sep=0pt] (logo) at (2.2, 1.2) {\insertlogo};
+    \node[inner sep=0pt] (logo) at (2.5, 1.6) {\insertlogo};
     \else
     \fill[usydwhite,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
     \fi
@@ -41,18 +42,8 @@
     \endgroup
 }
 
-\defbeamertemplate*{footline}{usyd}
-{%
-  \setbeamercolor{section in head/foot}{bg=}
-\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=4ex,leftskip=4em, rightskip=4em]{section in head/foot}%
-  \ifnum\thepage>1\relax%
-  University of Sydney\hfill\insertframenumber{}%
-  \fi
-\end{beamercolorbox}%
-}%
-
 \defbeamertemplate*{logo}{usyd}
-{\includegraphics[width=2.4cm]{\USYD@logo}}
+{\includegraphics[width=3.0cm]{\USYD@logo}}
 
 
 \defbeamertemplate*{sidebar right}{usyd}{}

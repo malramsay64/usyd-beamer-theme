@@ -1,0 +1,56 @@
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\setlength{\fboxsep}{0pt}
+
+\mode<presentation>
+
+\setbeamercolor{logo in head/foot}{parent=palette quaternary}
+\setbeamercolor{section in head/foot}{parent=palette secondary}
+
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{title in head/foot}{parent=logo in head/foot}
+
+\pgfdeclareimage[width=18mm]{usyd logo}{USYDLogo-eps-converted-to}
+
+\beamer@compresstrue
+
+%\usesectionheadtemplate
+%  {\hfill\insertsectionhead}
+%  {\hfill\color{fg!50!bg}\insertsectionhead}
+%                                % Head
+
+\defbeamertemplate*{headline}{logo theme}
+{%
+  \leavevmode%
+  \raisebox{-1pt}{\begin{beamercolorbox}[center,wd=.20\paperwidth]{logo in head/foot}%
+    \pgfuseimage{usyd logo}\hspace*{3pt}%
+  \end{beamercolorbox}}%
+  \vbox{\vskip1pt%
+  \begin{beamercolorbox}[rounded=true,wd=.80\paperwidth,ht=2.5pt,dp=5.5pt]{section in head/foot}
+    \makebox[.80\paperwidth]{%
+      \insertnavigation{.70\paperwidth} \hfill \usebeamercolor{page number in head/foot}\insertframenumber\hspace*{4pt}}%
+  \end{beamercolorbox}}%
+  \vskip1pt%
+}
+
+\newlength{\width@remainder}
+\setlength{\width@remainder}{.75\paperwidth}
+\addtolength{\width@remainder}{-4pt}
+
+\defbeamertemplate*{footline}{logo theme}
+{%
+  \mbox{%
+  \begin{beamercolorbox}[rounded=true,center,wd=0.25\paperwidth,ht=2.5pt,dp=1.5pt]{section in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \hskip4pt\raisebox{4pt}{\begin{beamercolorbox}[wd=\width@remainder,leftskip=8pt]{title in head/foot}
+    \usebeamerfont{title in head/foot}\insertshorttitle\hfill\insertshortdate{}\hspace*{1em}
+  \end{beamercolorbox}}}%
+  \vskip2pt%
+}
+
+\mode
+<all>
