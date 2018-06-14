@@ -1,0 +1,108 @@
+\ProvidesClass{slidedefs}
+
+\newcommand{\notetitle}[1]{\note{\textbf{\large #1}\\}}
+
+\newcommand{\titleslide}{%
+\begin{frame}[plain]%
+\notetitle{\inserttitle}%
+\titlepage%
+\end{frame}%
+}
+
+\newcommand{\partslide}{%
+\begin{frame}[plain]%
+\notetitle{\insertpart}%
+\partpage%
+\end{frame}%
+}
+
+\newcommand{\outlineslide}{%
+\begin{frame}
+\frametitle{Outline}
+\notetitle{Outline}%
+\tableofcontents
+\end{frame}
+}
+
+\newenvironment{plain}[1]{%
+\subsection*{#1}
+\begin{frame}[t,fragile,environment=plain]
+\frametitle{#1}
+\notetitle{#1}
+\newcommand{\p}{\item}
+}{%
+\end{frame}
+}
+
+\newenvironment{blank}{%
+\begin{frame}[t,fragile,plain,environment=blank]
+}{%
+\end{frame}
+}
+
+\newcommand{\stoppoints}{\end{itemize}}
+
+\newenvironment{points}[1]{%
+\subsection*{#1}
+\begin{frame}[t,fragile,environment=points]
+\frametitle{#1}
+\notetitle{#1}
+\newcommand{\p}{\item}
+\begin{itemize}
+}{%
+\stoppoints
+\end{frame}
+}
+
+\newcommand{\stopenums}{\end{enumerate}}
+
+\newenvironment{enums}[1]{%
+\subsection*{#1}
+\begin{frame}[t,fragile,environment=enums]
+\frametitle{#1}
+\notetitle{#1}
+\newcommand{\p}{\item}
+\begin{enumerate}
+}{%
+\stopenums
+\end{frame}
+}
+
+\newcommand{\stopcenter}{\end{center}}
+
+\newenvironment{centre}[1]{%
+\subsection*{#1}
+\begin{frame}[t,fragile,environment=centre]
+\frametitle{#1}
+\notetitle{#1}
+\newcommand{\p}{\item}%
+\vfill
+\begin{center}
+}{%
+\stopcenter
+\vfill
+\end{frame}
+}
+
+%% \newenvironment{video}[3]{%
+%% \subsection*{#1}
+%% \begin{frame}[t,fragile,environment=video]
+%% \frametitle{#1}
+%% \notetitle{#1}
+%% \newcommand{\p}{\item}%
+%% \begin{center}
+%% \ifthenelse{\equal{\outputtype}{present}}{
+%% \includemovie[controls,mouse]{50mm}{50mm}{#3}
+%% {%
+%% \stopcenter
+%% \end{frame}
+%% }
+
+\renewenvironment{quote}
+                 {\begin{beamercolorbox}[rounded=true]{block body}}
+                 {\end{beamercolorbox}}
+
+\newenvironment{pquote}
+            {\begin{beamercolorbox}[rounded=true,wd=.85\textwidth]{block body}}
+            {\end{beamercolorbox}}
+
