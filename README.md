@@ -64,3 +64,4 @@ Contributors
 Thanks to these people for their contributions
 
 - [finnconor](https://github.com/finnconor)
+- [Joel Nothman](https://github.com/jnothman)
