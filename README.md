@@ -83,6 +83,8 @@ environments that will automatically create a new subsection for each slide:
 		This content is centred horizontally and vertically on the slide.
     \end{centre}
 
+Credit: the logobar style and these macros are due to James R. Curran.
+
 Poster
 ------
 
