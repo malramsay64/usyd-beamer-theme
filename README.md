@@ -53,6 +53,36 @@ Removing the footline can be done by adding the following code snippet
 
     \setbeamertemplate{footline}{}
 
+Navigation bar
+--------------
+
+A variant theme includes the University logo in the top-left of each slide,
+along with indicators of how far you have progressed through the presentation
+(which can also be clicked to navigate to that slide). Instead of the `usyd`
+theme, use `usyd-logobar`.
+
+    \mode<presentation>
+    {%
+        \usetheme{usyd-logobar}
+    }
+
+Use `\subsection*{Title}` before each frame you want to be indicated on the
+navigation bar.  With `\usepackage{slidedefs}` you can exploit some helpful
+environments that will automatically create a new subsection for each slide:
+
+    \begin{plain}{Some title}
+        This is an empty slide with a dot in the bar.
+    \end{plain}
+
+    \begin{points}{Some title}
+        \item This automatically includes an itemize environment
+        \item Here's another bullet point
+    \end{plain}
+
+    \begin{centre}{Some title}
+		This content is centred horizontally and vertically on the slide.
+    \end{centre}
+
 Poster
 ------
 
