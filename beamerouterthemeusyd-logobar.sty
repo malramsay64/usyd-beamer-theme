@@ -1,0 +1,53 @@
+\mode<presentation>
+
+\beamer@compresstrue
+
+% This is the padding between text elements and the edges of the colorboxes
+\newlength{\theme@hpadding}
+\setlength{\theme@hpadding}{1.5em}
+
+% This is the whitespace on the top and bottom of the slides.
+\newlength{\theme@vpadding}
+\setlength{\theme@vpadding}{0.5em}
+
+\defbeamertemplate*{frametitle}{usyd logo}[1][]
+{%
+  \vskip3em
+  \begin{beamercolorbox}[wd=\textwidth, #1]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle\par%
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{headline}{usyd logo}
+{%
+  \ifnum\thepage=1%
+    \relax%
+  \else
+    % Leave a white gap at the top of the slide
+    \vspace{\theme@vpadding}
+    \leavevmode%
+    \begin{beamercolorbox}[center,wd=.25\paperwidth,ht=1.5em,dp=2em]{logo in head/foot}%
+      % Move down by the depth (dp) of the colorbox
+      \vspace{-2em}\insertlogo%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.75\paperwidth,ht=1.5em,dp=2em]{section in head/foot}%
+      \insertnavigation{0.75\linewidth} \hfill %
+      \insertframenumber\hspace{\theme@hpadding}
+    \end{beamercolorbox}
+  \fi
+}
+
+\defbeamertemplate*{footline}{usyd logo}
+{%
+  \leavevmode%
+  \begin{beamercolorbox}[center,wd=0.25\paperwidth,ht=1em,dp=0.5em]{author in head/foot}%
+    \insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=0.75\paperwidth,ht=1em,dp=0.5em]{title in head/foot}%
+    \hspace{\theme@hpadding}\insertshorttitle\hfill\insertdate\hspace{\theme@hpadding}
+  \end{beamercolorbox}%
+  % Leave white gap at bottom of slide the same size as at top
+  \vspace{\theme@vpadding}
+}
+
+\mode<all>
