@@ -9,7 +9,7 @@
     \fill[color=\USYD@titlegraphicbackground] (0.5*\the\paperwidth,0) rectangle (\the\paperwidth, \the\paperheight);
     \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight) {\includegraphics[width=0.5\paperwidth]{\USYD@titlegraphic}};
     \hskip-10pt
-    \node[inner sep=0pt] (logo) at (2.2, 1.2) {\insertlogo};
+    \node[inner sep=0pt] (logo) at (2.2, 1.2) {\usebeamertemplate*{logo titlepage}};
     \else
     \fill[usydwhite,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
     \fi
@@ -51,9 +51,11 @@
 \end{beamercolorbox}%
 }%
 
-\defbeamertemplate*{logo}{usyd}
+\defbeamertemplate*{logo titlepage}{usyd}
 {\includegraphics[width=2.4cm]{\USYD@logo}}
 
+\defbeamertemplate*{logo}{usyd}
+{\includegraphics[height=3.5em]{\USYD@logo}}
 
 \defbeamertemplate*{sidebar right}{usyd}{}
 
