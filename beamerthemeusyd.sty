@@ -13,13 +13,24 @@
 \def\titlegraphic#1{\gdef\USYD@titlegraphic{#1}}
 \def\titlegraphicbackground#1{\gdef\USYD@titlegraphicbackground{#1}}
 
+\newif\if@logobar
+\@logobarfalse
+\DeclareOption{logobar}{\@logobartrue}
+\ProcessOptions
+
 \useinnertheme{usyd}
+\if@logobar
+\useoutertheme{usyd-logobar}
+\else
 \useoutertheme{usyd}
+\fi
 \usecolortheme{usyd}
 \usefonttheme{usyd}
+
 \hypersetup{
   colorlinks=true,
   urlcolor=usydblue,
+  linkcolor=,
 }
 
 \mode<all>
