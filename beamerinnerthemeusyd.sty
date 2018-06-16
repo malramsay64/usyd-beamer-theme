@@ -43,12 +43,15 @@
 
 \defbeamertemplate*{footline}{usyd}
 {%
-  \setbeamercolor{section in head/foot}{bg=}
-\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=4ex,leftskip=4em, rightskip=4em]{section in head/foot}%
-  \ifnum\thepage>1\relax%
-  University of Sydney\hfill\insertframenumber{}%
+  \ifnum\thepage=1\relax%
+    % Transparent colorbox for titlepage
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=4ex]{placeholder}%
+    \end{beamercolorbox}%
+  \else
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=4ex,leftskip=4em, rightskip=4em]{section in head/foot}%
+    University of Sydney\hfill\insertframenumber{}%
+    \end{beamercolorbox}%
   \fi
-\end{beamercolorbox}%
 }%
 
 \defbeamertemplate*{logo titlepage}{usyd}
