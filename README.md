@@ -1,5 +1,5 @@
-usyd-beamer-template
-====================
+usyd-beamer-theme
+=================
 
 This is an unofficial version of the University of Sydney presentation template
 for use with beamer. It generally keeps to the intent of the official
@@ -43,15 +43,31 @@ Customisation
 The image in the titlegraphic is customisable using the
 `\titlegraphic{<filename>}` command, where `<filename>` is the filename of the
 image you want to use. The width of the image will always be half the slide
-width. To prevent any issues with the image not filling he vertical height of
+width. To prevent any issues with the image not filling the vertical height of
 the slide there is a `\titlegraphicbackground{<colour>}` command which will
 change the colour of the background to whichever colour you want, where
 `<colour>` is a colour defined using the `\color{}` command. The default colour
 is white.
 
-Removing the footline can be done by adding the following code snippet
+Removing the footline can be done by adding the following code snippet to your document.
 
     \setbeamertemplate{footline}{}
+
+
+### Logobar Theme
+
+A variation on the theme which includes navigation elements in a bar
+at the top of each slide. This optional variation on the theme is enabled
+by passing the `logobar` option when specifying the theme.
+
+```
+\usetheme[logobar]{usyd}
+```
+
+You can see this theme in action in the `example-logobar.pdf` file.
+
+This theme variation was contributed by [Joel Nothman](https://github.com/jnothman).
+
 
 Poster
 ------
