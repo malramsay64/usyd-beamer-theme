@@ -20,9 +20,7 @@
 
 \defbeamertemplate*{headline}{usyd logo}
 {%
-  \ifnum\thepage=1%
-    \relax%
-  \else
+  \ifnum\thepage>1%
     % Leave a white gap at the top of the slide
     \vspace{\theme@vpadding}
     \leavevmode%
@@ -39,15 +37,21 @@
 
 \defbeamertemplate*{footline}{usyd logo}
 {%
-  \leavevmode%
-  \begin{beamercolorbox}[center,wd=0.25\paperwidth,ht=1em,dp=0.5em]{author in head/foot}%
-    \insertshortauthor
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=0.75\paperwidth,ht=1em,dp=0.5em]{title in head/foot}%
-    \hspace{\theme@hpadding}\insertshorttitle\hfill\insertdate\hspace{\theme@hpadding}
-  \end{beamercolorbox}%
-  % Leave white gap at bottom of slide the same size as at top
-  \vspace{\theme@vpadding}
+  \ifnum\thepage=1\relax%
+    % Empty colourbox on titlepage to retain spacing on subsequent pages
+    \begin{beamercolorbox}[center,wd=\paperwidth,ht=1em,dp=0.5em]{bg=}%
+    \end{beamercolorbox}%
+  \else%
+    \leavevmode%
+    \begin{beamercolorbox}[center,wd=0.25\paperwidth,ht=1em,dp=0.5em]{author in head/foot}%
+      \insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.75\paperwidth,ht=1em,dp=0.5em]{title in head/foot}%
+      \hspace{\theme@hpadding}\insertshorttitle\hfill\insertdate\hspace{\theme@hpadding}
+    \end{beamercolorbox}%
+    % Leave white gap at bottom of slide the same size as at top
+    \vspace{\theme@vpadding}
+  \fi
 }
 
 \mode<all>
