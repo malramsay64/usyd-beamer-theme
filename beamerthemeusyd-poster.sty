@@ -2,14 +2,30 @@
 
 \selectcolormodel{cmyk}
 \RequirePackage{tcolorbox}
+\RequirePackage{etoolbox}
+
+\tcbuselibrary{raster, skins}
 
 \mode<presentation>
 
 \usecolortheme{usyd}
 \usefonttheme{usyd}
 
-\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+% Define default logo
+\gdef\USYD@logo{USYDLogo}
 
+% Default left and right poster logos
+\xdef\poster@logoleft{}
+\xdef\poster@logoright{\USYD@logo}
+
+% The logo defined with \logo is by default placed on the right.
+\def\logo#1{\gdef\poster@logoright{#1}}
+
+% commands to define custom left and right logos
+\def\logoleft#1{\gdef\poster@logoleft{#1}}
+\def\logoright#1{\gdef\poster@logoright{#1}}
+
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
 
 %% Define block for text in poster
 
@@ -26,13 +42,14 @@
 
 %% Define the headline of the poster
 
-\setbeamertemplate{headline}{
-
+\setbeamertemplate{headline}{%
   \begin{beamercolorbox}[wd=\paperwidth]{headline}
-    \begin{columns}
-      \begin{column}{0.2\linewidth}
-      \end{column}
-      \begin{column}{0.6\linewidth}
+    \begin{tcbraster}[raster equal height, raster columns=5, width=\pagewidth, raster halign=center,
+      opacityback=0, opacityframe=0]
+      \begin{tcolorbox}[valign=center]
+        \ifdefempty{\poster@logoleft}{}{\includegraphics{\poster@logoleft}}
+      \end{tcolorbox}
+      \begin{tcolorbox}[raster multicolumn=3]
         \vspace{2.5em}
         \begin{center}
           \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2em]}
@@ -40,12 +57,11 @@
           \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[0.5em]}
         \end{center}
         \vspace{1em}
-      \end{column}
-      \begin{column}{0.2\linewidth}
-        \vspace{-6em}\\
-        \includegraphics[width=0.8\linewidth]{USYDLogo}
-      \end{column}
-    \end{columns}
+      \end{tcolorbox}
+      \begin{tcolorbox}[valign=center]
+        \includegraphics[]{\USYD@logo}
+    \end{tcolorbox}
+    \end{tcbraster}
   \end{beamercolorbox}
 
   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
