@@ -26,6 +26,7 @@ before the `\usetheme` directive
 
 Then include the following after the `\usetheme` directive.
 
+
     \graphicspath{{usyd-beamer-theme/}}
 
 This adds the path of the image to the path to look for files.
@@ -49,7 +50,8 @@ change the colour of the background to whichever colour you want, where
 `<colour>` is a colour defined using the `\color{}` command. The default colour
 is white.
 
-Removing the footline can be done by adding the following code snippet to your document.
+Removing the footline can be done by adding the following code snippet to your
+document.
 
     \setbeamertemplate{footline}{}
 
@@ -60,14 +62,25 @@ A variation on the theme which includes navigation elements in a bar
 at the top of each slide. This optional variation on the theme is enabled
 by passing the `logobar` option when specifying the theme.
 
-```
-\usetheme[logobar]{usyd}
-```
+    \usetheme[logobar]{usyd}
 
 You can see this theme in action in the `example-logobar.pdf` file.
 
-This theme variation was contributed by [Joel Nothman](https://github.com/jnothman).
+To get the dots in the logobar as displayed in the example images, you either
+need to create subsections
 
+    \section{Introduction}
+    \subsection{An Introduction subsection}
+
+Or alternatively, you can increment the subsection counter
+
+    \section{Introduction}
+    \stepcounter{subsection}
+
+This second approach is particularly useful for shorter presentations where
+subsections don't make sense.
+
+This theme variation was contributed by [Joel Nothman](https://github.com/jnothman).
 
 Poster
 ------
