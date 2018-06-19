@@ -8,7 +8,7 @@
 
 % This is the whitespace on the top and bottom of the slides.
 \newlength{\theme@vpadding}
-\setlength{\theme@vpadding}{0.5em}
+\setlength{\theme@vpadding}{0.3em}
 
 \defbeamertemplate*{frametitle}{usyd logo}[1][]
 {%
@@ -24,11 +24,11 @@
     % Leave a white gap at the top of the slide
     \vspace{\theme@vpadding}
     \leavevmode%
-    \begin{beamercolorbox}[center,wd=.25\paperwidth,ht=1.5em,dp=2em]{logo in head/foot}%
+    \begin{beamercolorbox}[center,wd=.25\paperwidth,ht=1.2em,dp=1.5em]{logo in head/foot}%
       % Move down by the depth (dp) of the colorbox
-      \vspace{-2em}\insertlogo%
+      \vspace{-1.75em}\insertlogo%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.75\paperwidth,ht=1.5em,dp=2em]{section in head/foot}%
+    \begin{beamercolorbox}[wd=.75\paperwidth,ht=1.2em,dp=1.5em]{section in head/foot}%
       \insertnavigation{0.75\linewidth} \hfill %
       \insertframenumber\hspace{\theme@hpadding}
     \end{beamercolorbox}
