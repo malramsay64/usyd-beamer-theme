@@ -1,16 +1,13 @@
 makedir = output
-gen_files = example.pdf example-logobar.pdf
 
-all: $(gen_files)
+examples = $(wildcard examples/*.tex)
 
-$(gen_files): %.pdf: %.tex
-	latexmk -outdir=${makedir} -pdf $< && mv ${makedir}/$@ .
+all: $(examples:.tex=.pdf)
 
-example-logobar.tex: example.tex
-	sed 's/\usetheme{usyd}/\usetheme[logobar]{usyd}/' $< > $@
+%.pdf: %.tex
+	latexmk -outdir=${makedir} -pdf $< && mv ${makedir}/$(notdir $@) .
 
 clean:
 	rm -rf ${makedir}/*
-	rm -f $(gen_files)
-	rm -f example-logobar.tex
+	rm -f $(examples:.tex=.pdf)
 
