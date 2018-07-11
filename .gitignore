@@ -4,3 +4,6 @@ example-logobar.tex
 
 # PDF logo
 USYDLogo-eps-converted-to.pdf
+
+# All pdf files
+*.pdf
