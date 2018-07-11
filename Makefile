@@ -18,7 +18,7 @@ endif
 
 setup: | packages
 	${DOCKER_CMD} mpm --update-db
-	${DOCKER_CMD} mpm --update latexmk || mpm --install latexmk
+	${DOCKER_CMD} mpm --update latexmk || ${DOCKER_CMD} mpm --install latexmk
 
 
 packages:
