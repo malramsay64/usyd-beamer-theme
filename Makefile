@@ -4,7 +4,7 @@ examples = $(wildcard examples/*.tex)
 
 all: $(examples:.tex=.pdf)
 
-tex_flags = 
+tex_flags = -silent -interaction=batchmode
 
 DOCKER_CMD = docker run -ti -v packages:/miktex/.miktex -v $(CURDIR):/miktex/work miktex/miktex
 
