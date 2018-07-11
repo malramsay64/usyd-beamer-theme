@@ -8,7 +8,7 @@ tex_flags =
 
 DOCKER_CMD = docker run -ti -v packages:/miktex/.miktex -v $(CURDIR):/miktex/work miktex/miktex
 
-%.pdf: %.tex | packages
+%.pdf: %.tex | packages output
 ifndef TRAVIS
 	latexmk ${tex_flags} -outdir=${makedir} -pdf $<
 else
@@ -21,7 +21,7 @@ setup: | packages
 	${DOCKER_CMD} mpm --update latexmk || ${DOCKER_CMD} mpm --install latexmk
 
 
-packages:
+packages output:
 	mkdir -p $@
 
 clean:
