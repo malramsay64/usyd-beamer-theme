@@ -9,7 +9,8 @@ cache:
   apt: true
 
 script:
-  - make
+  - echo "test"
+  # - make
 
 deploy:
   provider: releases
