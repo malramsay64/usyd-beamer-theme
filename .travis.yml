@@ -6,7 +6,7 @@ services:
 
 cache:
   directories:
-    - $HOME/.miktex
+    - packages
 
 before-install:
   - mkdir -p $HOME/.miktex
