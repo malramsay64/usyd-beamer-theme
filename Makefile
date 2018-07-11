@@ -23,6 +23,7 @@ setup: | packages
 
 packages output:
 	mkdir -p $@
+	chmod a+rw $@
 
 clean:
 	rm -rf ${makedir}/*
