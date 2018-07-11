@@ -10,6 +10,8 @@ cache:
 
 install:
   - make setup
+  - sudo apt-get update
+  - sudo apt-get install -y biber
 
 script:
   - make
