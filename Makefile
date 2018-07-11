@@ -4,8 +4,16 @@ examples = $(wildcard examples/*.tex)
 
 all: $(examples:.tex=.pdf)
 
+tex_flags = -interaction=batchmode -silent
+
+DOCKER_CMD = docker run -ti -v ${HOME}/.miktex:/miktex/.miktex -v $(CURDIR):/miktex/work miktex/miktex
+
 %.pdf: %.tex
-	latexmk -silent -interaction=batchmode -outdir=${makedir} -pdf $<
+ifndef TRAVIS
+	latexmk ${tex_flags} -outdir=${makedir} -pdf $<
+else
+	${DOCKER_CMD} latexmk ${tex_flags} -outdir=${makedir} -pdf $<
+endif
 	cp ${makedir}/$(notdir $@) .
 
 clean:

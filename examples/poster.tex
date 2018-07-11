@@ -3,7 +3,7 @@
 \documentclass{beamer}
 
 \makeatletter
-\def\input@path{{examples/}}
+\def\input@path{{../}{examples/}}
 % When theme as submodule use the below line instead
 % \def\input@path{{usyd-beamer-theme/}}
 \makeatother
@@ -20,7 +20,7 @@
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \renewcommand*{\bibfont}{\small}
 
-\addbibresource{examples/references.bib}
+\addbibresource{references.bib}
 
 \mode<presentation>{\usetheme{usyd-poster}}
 
@@ -38,7 +38,7 @@
   \vskip0pt%
 }
 
-\graphicspath{{examples/figures/}{../}}
+\graphicspath{{examples/figures/}{../}{figures/}}
 % Use the below line instead when usyd-beamer-theme is a submodule
 % \graphicspath{{figures/}{usyd-beamer-theme/}}
 
