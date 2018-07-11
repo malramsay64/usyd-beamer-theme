@@ -30,11 +30,11 @@
     \end{beamercolorbox}
   \else%
     \leavevmode%
-    \begin{beamercolorbox}[center,wd=.25\paperwidth,ht=1.2em,dp=1.5em]{logo in head/foot}%
+    \begin{beamercolorbox}[center,wd=0.25\paperwidth,ht=1.2em,dp=1.5em]{logo in head/foot}%
       % Move down by the depth (dp) of the colorbox
       \vspace{-1.75em}\insertlogo%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.75\paperwidth,ht=1.2em,dp=1.5em]{section in head/foot}%
+    \begin{beamercolorbox}[wd=0.75\paperwidth,ht=1.2em,dp=1.5em]{section in head/foot}%
       \insertnavigation{0.75\linewidth} \hfill %
       \insertframenumber\hspace{\theme@hpadding}
     \end{beamercolorbox}
@@ -45,7 +45,7 @@
 {%
   \ifnum\thepage=1\relax%
     % Empty colourbox on titlepage to retain spacing on subsequent pages
-    \begin{beamercolorbox}[center,wd=\paperwidth,ht=1em,dp=0.5em]{placeholder}%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1em,dp=0.5em]{placeholder}%
     \end{beamercolorbox}%
   \else%
     \leavevmode%
@@ -55,9 +55,9 @@
     \begin{beamercolorbox}[wd=0.75\paperwidth,ht=1em,dp=0.5em]{title in head/foot}%
       \hspace{\theme@hpadding}\insertshorttitle\hfill\insertdate\hspace{\theme@hpadding}
     \end{beamercolorbox}%
-    % Leave white gap at bottom of slide the same size as at top
-    \vspace{\theme@vpadding}
   \fi
+  % Leave gap at bottom of slide the same size as at top
+  \vspace{\theme@vpadding}
 }
 
 \mode<all>
