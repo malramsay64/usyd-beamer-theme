@@ -12,7 +12,7 @@
 
 \defbeamertemplate*{frametitle}{usyd logo}[1][]
 {%
-  \vskip2em
+  \vskip1ex
   \begin{beamercolorbox}[wd=\textwidth, #1]{frametitle}
     \usebeamerfont{frametitle}\insertframetitle\par%
   \end{beamercolorbox}
@@ -20,9 +20,15 @@
 
 \defbeamertemplate*{headline}{usyd logo}
 {%
-  \ifnum\thepage>1%
-    % Leave a white gap at the top of the slide
-    \vspace{\theme@vpadding}
+  % Leave a gap at the top of the slide before the headline
+  \vspace{\theme@vpadding}
+  \ifnum\thepage=1\relax%
+    % For beamer to not raise an error it needs to know the height of this element for all slides.
+    % This creates an placeholder for the title-page to satisfy positioning on all subsequent
+    % slides.
+    \begin{beamercolorbox}[wd=\paperwidth, ht=1.2em,dp=1.5em]{placeholder}%
+    \end{beamercolorbox}
+  \else%
     \leavevmode%
     \begin{beamercolorbox}[center,wd=.25\paperwidth,ht=1.2em,dp=1.5em]{logo in head/foot}%
       % Move down by the depth (dp) of the colorbox
