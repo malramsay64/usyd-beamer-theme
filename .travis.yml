@@ -8,8 +8,8 @@ cache:
   directories:
     - packages
 
-before-install:
-  - mkdir -p $HOME/.miktex
+install:
+  - make setup
 
 script:
   - make

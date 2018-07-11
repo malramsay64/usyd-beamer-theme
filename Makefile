@@ -16,6 +16,11 @@ else
 endif
 	cp ${makedir}/$(notdir $@) .
 
+setup: | packages
+	${DOCKER_CMD} mpm --updatedb
+	${DOCKER_CMD} mpm --update latexmk
+
+
 packages:
 	mkdir -p $@
 
