@@ -1,23 +1,25 @@
 language: generic
 
-sudo: required
-services:
-  - docker
-
 cache:
   directories:
-    - packages
+    - $HOME/.cache/Tectonic
+    - $HOME/miniconda
+    - $HOME/downloads
 
-install:
-  - |
-    if [ ! -f $HOME/.biber.tar.gz ]; then
-      wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.5/binaries/Linux/biber-linux_x86_64.tar.gz -O $HOME/biber.tar.gz
-    fi
+before_install:
+  - mkdir -p $HOME/downloads
   - mkdir -p $HOME/bin
+
+  - |
+    if [ ! -f $HOME/downloads/biber.tar.gz ]; then
+      wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.5/binaries/Linux/biber-linux_x86_64.tar.gz -O $HOME/downloads/biber.tar.gz
+    fi
   - tar xvzf $HOME/biber.tar.gz -C $HOME/bin
   - export PATH="$HOME/bin:$PATH"
 
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - if [ ! -f $HOME/downloads/biber.tar.gz ]; then
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/downloads/miniconda.sh
+    fi
   - bash miniconda.sh -b -u -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - hash -r
