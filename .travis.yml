@@ -9,7 +9,20 @@ cache:
     - packages
 
 install:
-  - make setup
+  - |
+    if [ ! -f $HOME/.biber.tar.gz ]; then
+      wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.5/binaries/Linux/biber-linux_x86_64.tar.gz -O $HOME/biber.tar.gz
+    fi
+  - mkdir -p $HOME/bin
+  - tar xvzf $HOME/biber.tar.gz -C $HOME/bin
+  - export PATH="$HOME/bin:$PATH"
+
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -u -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+
+  - conda install -c conda-forge tectonic
 
 script:
   - make
@@ -18,7 +31,7 @@ deploy:
   provider: releases
   api_key:
     secure: UUehJg+WyXY1/3uuAd/g4zkwOYwt5wmHvvzOL4z1DvLF8rkKMfdAbfrUg/0BFjy7xeKEbkzbFbBVpHo9qEdl/P3y4yEwIywNSAcl/1ufavGOb0/BkuVEXfcoLWBRdl+5MZlvw/aYnyccx3m9GBABlOuW7xZQ4zDCvAB7QH5TQIkrAz9eBYfySbmMWDod0V80/fXkjVJR14ffgWBfVEgd5B9U21Ugak0M1btc0+JX+wWAmYyzTCCoeJHCLymPXQOIondU5pjHq3bHm6tLk6ZdWN00r/mKhv+mlW2TaWrfXcZDLDijLAkKbIasnRjGdvArK5sYcYIJIHLUiTt15tq46HxM3SAz+bZzfizGFWdTajEC8yx2SkWBwzFrLRNwe3fZVOgJ5FXrISQ/yyOpQ0BJ+PVbXBBvsgOgftfwjpTV0tkeQIRJ0ZzmwKUQu9t5laCY73IJVG+a2obqRFSTkktk0N880yswKd1zhfizS3Y9tyEYUFBfzCH9ZINTkN3SDv3jtXvf/gIg/tfPpdxQqWeFZJuLwQiL11Z/Zo8JY15Dj95DXcxMZnfBmUWzu13elQjYlm9q+ZSj1baJwFJTO2X6RbSCzUAU82ShgwvT6jKWSRl4DQk6CyLKu1QCg9Pfb7pFTVGROlp/89tsxXColmZvw/eKvuySFhCLmE4aiQ9XjcE=
-  file: 
+  file:
     - example.pdf
     - example-logobar.pdf
     - poster.pdf
