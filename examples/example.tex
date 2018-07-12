@@ -1,5 +1,11 @@
 \documentclass[aspectratio=169, 22pt]{beamer}
 
+\makeatletter
+\def\input@path{{../}{examples/}}
+% When theme as submodule use the below line instead
+% \def\input@path{{usyd-beamer-theme/}}
+\makeatother
+
 \usepackage{amsmath}
 
 \title{The $\tau$ vs $\pi$ argument is really long and interesting}
@@ -10,6 +16,8 @@
 \usetheme{usyd}
 % To use the logobar theme use the line below instead
 % \usetheme[logobar]{usyd}
+
+\graphicspath{{../}}
 
 \titlegraphic{USYDTitle}
 \titlegraphicbackground{usydred}
