@@ -26,7 +26,7 @@ before_install:
   - hash -r
 
   - conda config --set always_yes yes --set changeps1 no
-  - conda instal -c conda-forge tectonic
+  - conda install -c conda-forge tectonic
 
 script:
   - make
