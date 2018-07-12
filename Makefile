@@ -11,9 +11,7 @@ ifndef TRAVIS
 	latexmk ${tex_flags} -outdir=${makedir} -pdf $<
 else
 	tectonic -o $(makedir) --keep-intermediates $<
-ifeq (,$(wildcard ${makedir}/$(notdir $(<:.tex=.bcf))))
-	biber $(makedir)/$(notdir $(<:.tex=))
-endif
+	if [ -f $(notdir $(<:.tex=.bcf)) ]; then biber $(makedir)/$(notdir $(<:.tex=)); fi
 	tectonic -o $(makedir) --keep-intermediates $<
 endif
 	cp ${makedir}/$(notdir $@) .
