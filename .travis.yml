@@ -17,7 +17,8 @@ before_install:
   - tar xvzf $HOME/downloads/biber.tar.gz -C $HOME/bin
   - export PATH="$HOME/bin:$PATH"
 
-  - if [ ! -f $HOME/downloads/biber.tar.gz ]; then
+  - |
+    if [ ! -f $HOME/downloads/biber.tar.gz ]; then
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/downloads/miniconda.sh
     fi
   - bash $HOME/downloads/miniconda.sh -b -u -p $HOME/miniconda
