@@ -22,6 +22,6 @@ $(makedir):
 clean:
 	rm -rf ${makedir}/*
 	rm -f $(examples:.tex=.pdf)
-	rm -f $(examples:.tex=.bbl)
-	rm -f $(examples:.tex=.blg)
+	rm -f $(notdir $(examples:.tex=.bbl))
+	rm -f $(notdir $(examples:.tex=.blg))
 
