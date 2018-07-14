@@ -1,0 +1,60 @@
+\documentclass[aspectratio=169, 22pt]{beamer}
+
+\makeatletter
+\def\input@path{{../}{examples/}}
+% When theme as submodule use the below line instead
+% \def\input@path{{usyd-beamer-theme/}}
+\makeatother
+
+\usepackage{amsmath}
+
+\title{The $\tau$ vs $\pi$ argument is really long and interesting}
+\subtitle{It is mostly a notational argument}
+\date{\today}
+\author[Malcolm]{Malcolm Ramsay}
+
+\usetheme{usyd}
+% To use the logobar theme use the line below instead
+% \usetheme[logobar]{usyd}
+
+\graphicspath{{../}}
+
+\titlegraphic{USYDTitle}
+\titlegraphicbackground{usydred}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+\section{Argument}
+\stepcounter{subsection}
+
+\begin{frame}{Why use $\tau$ when there is $\pi$}
+  \begin{block}{Theorem}
+    $\tau$ is great when \href{http://blah}{dealing} with circles
+  \end{block}
+
+  \begin{enumerate}
+    \item<1-> Fourier transforms
+      \begin{equation}
+        \hat f(\zeta) = \int_{-\infty}^{+\infty} f(x) e^{-2\pi ix\zeta} dx
+      \end{equation}
+    \item<2-> A simple pendulum
+      \begin{equation}
+        T \approx 2\pi \sqrt{\frac{L}{g}}
+      \end{equation}
+  \end{enumerate}
+\end{frame}
+
+\section{Reasoning}
+\stepcounter{subsection}
+
+\begin{frame}{An excuse to write equations}
+  \begin{enumerate}
+    \item Highlight what \LaTeX is best at
+  \end{enumerate}
+\end{frame}
+
+\end{document}

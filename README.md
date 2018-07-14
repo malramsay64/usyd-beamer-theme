@@ -8,6 +8,13 @@ presentation, however the most noticeable difference is the fonts.
 The template has been tested in both the 4:3 and 16:9 aspect ratios, and should
 work in any other.
 
+The latest examples can be downloaded from the [releases page][releases] or directly from the links
+below.
+
+- [Main theme][example.pdf]
+- [Logobar theme][example-logobar.pdf]
+- [Poster theme][poster.pdf]
+
 How to use
 ----------
 
@@ -17,7 +24,7 @@ submodule
 
     git submodule add https://github.com/malramsay64/usyd-beamer-theme.git
 
-To incorporate that directory into the path $\LaTeX$ searches add the following
+To incorporate that directory into the path LaTeX searches add the following
 before the `\usetheme` directive
 
     \makeatletter
@@ -64,7 +71,7 @@ by passing the `logobar` option when specifying the theme.
 
     \usetheme[logobar]{usyd}
 
-You can see this theme in action in the `example-logobar.pdf` file.
+You can see this theme in action in the [example-logobar.pdf][] file.
 
 To get the dots in the logobar as displayed in the example images, you either
 need to create subsections
@@ -85,7 +92,7 @@ This theme variation was contributed by [Joel Nothman](https://github.com/jnothm
 Poster
 ------
 
-There is also support for a poster using the beamerposter package with `\usetheme{usyd-poster}`.
+There is also support for a [poster][poster.pdf] using the beamerposter package with `\usetheme{usyd-poster}`.
 
 Contributors
 ------------
@@ -94,3 +101,8 @@ Thanks to these people for their contributions
 
 - [finnconor](https://github.com/finnconor)
 - [Joel Nothman](https://github.com/jnothman)
+
+[releases]: https://github.com/malramsay64/usyd-beamer-theme/releases/latest
+[example.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0-dev2/example.pdf
+[example-logobar.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0-dev2/example-logobar.pdf
+[poster.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0-dev2/poster.pdf

@@ -1,0 +1,45 @@
+language: generic
+
+cache:
+  directories:
+    - $HOME/.cache/Tectonic
+    - $HOME/miniconda
+    - $HOME/downloads
+
+before_install:
+  - mkdir -p $HOME/downloads
+  - mkdir -p $HOME/bin
+
+  - |
+    if [ ! -f $HOME/downloads/biber.tar.gz ]; then
+      wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.5/binaries/Linux/biber-linux_x86_64.tar.gz -O $HOME/downloads/biber.tar.gz
+    fi
+  - tar xvzf $HOME/downloads/biber.tar.gz -C $HOME/bin
+  - mv $HOME/bin/biber $HOME/bin/biber2.5
+  - export PATH="$HOME/bin:$PATH"
+
+  - |
+    if [ ! -f $HOME/downloads/miniconda.sh ]; then
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/downloads/miniconda.sh
+    fi
+  - bash $HOME/downloads/miniconda.sh -b -u -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+
+  - conda config --set always_yes yes --set changeps1 no
+  - conda install -c conda-forge tectonic
+
+script:
+  - make
+
+deploy:
+  provider: releases
+  api_key:
+    secure: IZxXdJKSahFzM0rptLDOj7MG5FQ63kXB069o5xe+sUr5Z5Y3ZlelOVObQDvztqjn7PF9cpscf3Ez7sF5xm2KNxvTpzFdoKpJoNCZ0VG1gX2A5WHBCjPtveae8syGM9J/vzAQPTWumTBniPH+3vFbtWnd7aXoDKAeGIfbCOXwyE/imXfmI/MHG6FX816Q4KWzTJ5zrGSpV8AM5I61j4wJwcUEJWmQ1LfRKBW3gQ+xK4NvnIJkpIFrPyvJ3WgqcfQ6cz1en5DNdRoyd3HI4+NrmL8UeazOrt9TDGtWrLeCZnTttDQX5A06dmAsffXTBknpRJDpNOps7d1m9Rnvs4JW98CFXFSqCA/N3aCY8Y1dM0X44ZALgioLmpggYoiuRdWAG+6rUPPYzQutB3uWBATZfWDsVXJ+rwvqSFmFnRun7KFz7+ulzmQug0R7+GO6hoKVsH07jpIUMj9OPbOhZYLGxRD4WDQKulC3q9AMoxMpR0IeCBMWIuvj1SigHyDK9fyoHouo3TCQP1kqTlRVwdvStNeuIOOAiMEyXq9UlSJ9keeX4CQ12GBMpP6ZKWXuPBiPrqUe00Pb+11a7GOVh69v7ZWiLRUhXiENgzbyH9LB4FznB7RVshXdWG7rqWxoFl37XsnZyxPszwbZj99GEMGaiuGYlKQiNE7dvItcg4vWbl4=
+  file:
+    - example.pdf
+    - example-logobar.pdf
+    - poster.pdf
+  skip_cleanup: true
+  on:
+    tags: True

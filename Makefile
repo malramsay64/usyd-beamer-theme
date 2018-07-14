@@ -1,16 +1,27 @@
 makedir = output
-gen_files = example.pdf example-logobar.pdf
 
-all: $(gen_files)
+examples = $(wildcard examples/*.tex)
 
-$(gen_files): %.pdf: %.tex
-	latexmk -outdir=${makedir} -pdf $< && mv ${makedir}/$@ .
+all: $(examples:.tex=.pdf)
 
-example-logobar.tex: example.tex
-	sed 's/\usetheme{usyd}/\usetheme[logobar]{usyd}/' $< > $@
+tex_flags = -silent -interaction=batchmode
+
+%.pdf: %.tex | $(makedir)
+ifndef TRAVIS
+	latexmk ${tex_flags} -outdir=${makedir} -pdf $<
+else
+	tectonic -o $(makedir) --keep-intermediates -r0 $<
+	if [ -f ${makedir}/$(notdir $(<:.tex=.bcf)) ]; then biber2.5 --input-directory ${makedir} $(notdir $(<:.tex=)); fi
+	tectonic -o $(makedir) --keep-intermediates $<
+endif
+	cp ${makedir}/$(notdir $@) .
+
+$(makedir):
+	mkdir -p $@
 
 clean:
 	rm -rf ${makedir}/*
-	rm -f $(gen_files)
-	rm -f example-logobar.tex
+	rm -f $(examples:.tex=.pdf)
+	rm -f $(notdir $(examples:.tex=.bbl))
+	rm -f $(notdir $(examples:.tex=.blg))
 
