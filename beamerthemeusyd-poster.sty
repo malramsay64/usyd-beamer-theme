@@ -39,35 +39,38 @@
   \vspace{1em}
 }
 
-
 %% Define the headline of the poster
 
 \setbeamertemplate{headline}{%
   \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    % Coloured space before start of header
+    \vspace{2.5em}
     \begin{tcbraster}[raster equal height, raster columns=5, width=\pagewidth, raster halign=center,
       opacityback=0, opacityframe=0]
-      \begin{tcolorbox}[valign=center]
+      % Create the column for the left hand logo
+      \begin{tcolorbox}[valign=top]
         \ifdefempty{\poster@logoleft}{}{\includegraphics{\poster@logoleft}}
       \end{tcolorbox}
+      % Create the middle column with title, author and attributions
       \begin{tcolorbox}[raster multicolumn=3]
-        \vspace{2.5em}
         \begin{center}
           \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2em]}
           \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[0.5em]}
           \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[0.5em]}
         \end{center}
-        \vspace{1em}
       \end{tcolorbox}
-      \begin{tcolorbox}[valign=center]
-        \includegraphics[]{\USYD@logo}
+      % Create column for the right hand logo
+      \begin{tcolorbox}[valign=top]
+        \includegraphics[]{\poster@logoright}
     \end{tcolorbox}
     \end{tcbraster}
+    % Coloured space before the end of the coloured header section
+    \vspace{1em}
   \end{beamercolorbox}
 
   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
   \end{beamercolorbox}
 }
-
 
 %% The bottom line of the poster
 
