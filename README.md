@@ -103,6 +103,6 @@ Thanks to these people for their contributions
 - [Joel Nothman](https://github.com/jnothman)
 
 [releases]: https://github.com/malramsay64/usyd-beamer-theme/releases/latest
-[example.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0-dev2/example.pdf
-[example-logobar.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0-dev2/example-logobar.pdf
-[poster.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0-dev2/poster.pdf
+[example.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0/example.pdf
+[example-logobar.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0/example-logobar.pdf
+[poster.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.0/poster.pdf
