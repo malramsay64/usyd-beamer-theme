@@ -1,5 +1,5 @@
 \mode<presentation>
-
+\usepackage{etoolbox}
 \setbeamertemplate{background}
 {%
   \begin{tikzpicture}
@@ -59,13 +59,11 @@
 {\includegraphics[width=2.4cm]{\USYD@logo}}
 
 \defbeamertemplate*{affiliationlogo titlepage}{usyd}
-{\includegraphics[width=2.2cm]{\USYD@affiliationlogo}}
+{\ifdefempty{\USYD@affiliationlogo}{}{\includegraphics[width=2.2cm]{\USYD@affiliationlogo}}}
+
 
 \defbeamertemplate*{logo}{usyd}
 {\includegraphics[height=3em]{\USYD@logo}}
-
-\defbeamertemplate*{affiliationlogo}{usyd}
-{\includegraphics[height=3em]{\USYD@affiliationlogo}}
 
 \defbeamertemplate*{sidebar right}{usyd}{}
 
