@@ -8,10 +8,10 @@
 
 \usepackage{amsmath}
 
-\title{ITSC Beamer template}
-\subtitle{Latex based template for presentations}
+\title{The $\tau$ vs $\pi$ argument is really long and interesting}
+\subtitle{It is mostly a notational argument}
 \date{\today}
-\author[Author]{Author1}
+\author[Malcolm]{Malcolm Ramsay}
 
 \usetheme{usyd}
 % To use the logobar theme use the line below instead
@@ -31,19 +31,19 @@
 \section{Argument}
 \stepcounter{subsection}
 
-\begin{frame}{ITSC Beamer template}
-  \begin{block}{1. Keeping in mind}
-    Frame
+\begin{frame}{Why use $\tau$ when there is $\pi$}
+  \begin{block}{Theorem}
+    $\tau$ is great when \href{http://blah}{dealing} with circles
   \end{block}
 
   \begin{enumerate}
-    \item<1-> Reference equation
+    \item<1-> Fourier transforms
       \begin{equation}
-        y_n=-\frac{d}{2}-\frac{d(R^2 - r_c^2)}{2D^2}+\frac{R}{D^2}\partial
+        \hat f(\zeta) = \int_{-\infty}^{+\infty} f(x) e^{-2\pi ix\zeta} dx
       \end{equation}
-    \item<2-> Second equation
+    \item<2-> A simple pendulum
       \begin{equation}
-        \frac{1}{4} \sqrt[]{(q+r_n)(D-R+r_n)(q-r_n)(-D+R+r_n)}
+        T \approx 2\pi \sqrt{\frac{L}{g}}
       \end{equation}
   \end{enumerate}
 \end{frame}
