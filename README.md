@@ -104,6 +104,7 @@ Thanks to these people for their contributions
 
 - [finnconor](https://github.com/finnconor)
 - [Joel Nothman](https://github.com/jnothman)
+- [Stephany Berrio](https://github.com/chinitaberrio)
 
 [releases]: https://github.com/malramsay64/usyd-beamer-theme/releases/latest
 [example.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.1/example.pdf
