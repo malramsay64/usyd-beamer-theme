@@ -10,6 +10,7 @@
     \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight) {\includegraphics[width=0.5\paperwidth]{\USYD@titlegraphic}};
     \hskip-10pt
     \node[inner sep=0pt] (logo) at (2.2, 1.2) {\usebeamertemplate*{logo titlepage}};
+    \node[inner sep=0pt] (logo) at (6.4, 1.4) {\usebeamertemplate*{affiliationlogo titlepage}};
     \else
     \fill[usydwhite,opacity=1] (0,0) rectangle (\the\paperwidth, \the\paperheight);
     \fi
@@ -56,6 +57,10 @@
 
 \defbeamertemplate*{logo titlepage}{usyd}
 {\includegraphics[width=2.4cm]{\USYD@logo}}
+
+\defbeamertemplate*{affiliationlogo titlepage}{usyd}
+{\ifdefempty{\USYD@affiliationlogo}{}{\includegraphics[width=2.2cm]{\USYD@affiliationlogo}}}
+
 
 \defbeamertemplate*{logo}{usyd}
 {\includegraphics[height=3em]{\USYD@logo}}
