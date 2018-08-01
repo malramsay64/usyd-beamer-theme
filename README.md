@@ -57,6 +57,9 @@ change the colour of the background to whichever colour you want, where
 `<colour>` is a colour defined using the `\color{}` command. The default colour
 is white.
 
+An additional logo can be added to the titlepage next to the USYD logo with the
+`\affiliationlogo{<filename>}` command.
+
 Removing the footline can be done by adding the following code snippet to your
 document.
 
