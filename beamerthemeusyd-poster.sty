@@ -13,13 +13,15 @@
 
 % Define default logo
 \gdef\USYD@logo{USYDLogo}
+\gdef\USYD@affiliationlogo{}
 
 % Default left and right poster logos
-\xdef\poster@logoleft{}
+\xdef\poster@logoleft{\USYD@affiliationlogo}
 \xdef\poster@logoright{\USYD@logo}
 
 % The logo defined with \logo is by default placed on the right.
 \def\logo#1{\gdef\poster@logoright{#1}}
+\def\affiliationlogo#1{\gdef\poster@logoleft{#1}}
 
 % commands to define custom left and right logos
 \def\logoleft#1{\gdef\poster@logoleft{#1}}
