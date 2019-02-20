@@ -11,14 +11,6 @@ before_install:
   - mkdir -p $HOME/bin
 
   - |
-    if [ ! -f $HOME/downloads/biber.tar.gz ]; then
-      wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.5/binaries/Linux/biber-linux_x86_64.tar.gz -O $HOME/downloads/biber.tar.gz
-    fi
-  - tar xvzf $HOME/downloads/biber.tar.gz -C $HOME/bin
-  - mv $HOME/bin/biber $HOME/bin/biber2.5
-  - export PATH="$HOME/bin:$PATH"
-
-  - |
     if [ ! -f $HOME/downloads/miniconda.sh ]; then
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/downloads/miniconda.sh
     fi
@@ -28,6 +20,7 @@ before_install:
 
   - conda config --set always_yes yes --set changeps1 no
   - conda install -c conda-forge tectonic
+  - conda install -c malramsay biber
 
 script:
   - make
