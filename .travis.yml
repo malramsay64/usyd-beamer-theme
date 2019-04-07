@@ -19,8 +19,8 @@ before_install:
   - hash -r
 
   - conda config --set always_yes yes --set changeps1 no
-  - conda install -c conda-forge tectonic
-  - conda install -c malramsay biber
+  - conda install -c conda-forge tectonic==0.1.11
+  - conda install -c malramsay biber==2.5
 
 script:
   - make
