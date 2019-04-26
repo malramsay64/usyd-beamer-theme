@@ -20,7 +20,7 @@ before_install:
 
   - conda config --set always_yes yes --set changeps1 no
   - conda install -c conda-forge tectonic==0.1.11
-  - conda install -c malramsay biber==2.5
+  - conda install -c malramsay biber==2.11
 
 script:
   - make
