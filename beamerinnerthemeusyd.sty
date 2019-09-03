@@ -7,7 +7,8 @@
     \useasboundingbox (0,0) rectangle(\the\paperwidth, \the\paperheight);
     \fill[color=usydred] (0,0) rectangle (0.5*\the\paperwidth, \the\paperheight);
     \fill[color=\USYD@titlegraphicbackground] (0.5*\the\paperwidth,0) rectangle (\the\paperwidth, \the\paperheight);
-    \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight) {\includegraphics[width=0.5\paperwidth]{\USYD@titlegraphic}};
+    \node[inner sep=0pt] (titlegraphic) at (0.75*\paperwidth, 0.5*\paperheight)
+    {\includegraphics[width=0.5\paperwidth,height=\Gin@nat@height,keepaspectratio]{\USYD@titlegraphic}};
     \hskip-10pt
     \node[inner sep=0pt] (logo) at (2.2, 1.2) {\usebeamertemplate*{logo titlepage}};
     \node[inner sep=0pt] (logo) at (6.4, 1.4) {\usebeamertemplate*{affiliationlogo titlepage}};
