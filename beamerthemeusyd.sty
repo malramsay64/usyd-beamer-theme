@@ -20,9 +20,17 @@
 \def\titlegraphic#1{\gdef\USYD@titlegraphic{#1}}
 \def\titlegraphicbackground#1{\gdef\USYD@titlegraphicbackground{#1}}
 
+% Declare options for choosing the theme. This gets the option
+% from the square brackets before the name of the theme. That is,
+% \usetheme[<option>]{usyd}
+% There are currently two possible options, logobar and split,
+% which define the beamer outer theme to use.
 \newif\if@logobar
 \@logobarfalse
 \DeclareOption{logobar}{\@logobartrue}
+\newif\if@split
+\@splitfalse
+\DeclareOption{split}{\@splittrue}
 \ProcessOptions
 
 % Select inner theme
