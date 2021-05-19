@@ -25,13 +25,18 @@
 \DeclareOption{logobar}{\@logobartrue}
 \ProcessOptions
 
+% Select inner theme
 \useinnertheme{usyd}
 \if@logobar
 \useoutertheme{usyd-logobar}
+\else\if@split
+\useoutertheme{usyd-split}
 \else
 \useoutertheme{usyd}
-\fi
+\fi\fi
+
 \usecolortheme{usyd}
+
 \usefonttheme{usyd}
 
 \hypersetup{

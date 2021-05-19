@@ -1,0 +1,83 @@
+\mode<presentation>
+
+\beamer@compresstrue
+
+% This is the padding between text elements and the edges of the colorboxes
+\newlength{\theme@hpadding}
+\setlength{\theme@hpadding}{1.5em}
+
+% This is the whitespace on the top and bottom of the slides.
+\newlength{\theme@vpadding}
+\setlength{\theme@vpadding}{0.3em}
+
+\setbeamercolor{section in head/foot}{parent=palette quaternary}
+\setbeamercolor{subsection in head/foot}{parent=palette primary}
+
+\usesectionheadtemplate
+  {\hfill\insertsectionhead}
+  {\hfill\color{fg!50!bg}\insertsectionhead}
+
+\defbeamertemplate*{frametitle}{usyd split}[1][]
+{
+  \vskip1ex
+  \begin{beamercolorbox}[wd=\textwidth, #1]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle\par
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{headline}{usyd split}
+{
+  \vspace{\theme@vpadding}
+  \ifnum\thepage=1\relax
+    % For beamer to not raise an error it needs to know the height of this element for all slides.
+    % This creates an placeholder for the title-page to satisfy positioning on all subsequent
+    % slides.
+    \begin{beamercolorbox}[wd=\paperwidth, ht=1.2em,dp=1.5em]{placeholder}
+    \end{beamercolorbox}
+  \else
+    \leavevmode
+    \@tempdimb=2.4375ex
+    \ifnum\beamer@subsectionmax<\beamer@sectionmax
+      \multiply\@tempdimb by\beamer@sectionmax
+    \else
+      \multiply\@tempdimb by\beamer@subsectionmax
+    \fi
+    % Limit minimum height to allow room for logo.
+    \ifdim\@tempdimb<7.3125ex
+      \@tempdimb=7.3125ex
+    \fi
+    \ifdim\@tempdimb>0pt
+      \advance\@tempdimb by 1.825ex
+      \begin{beamercolorbox}[center,wd=0.25\paperwidth,ht=\@tempdimb]{logo in head/foot}
+        \vbox to\@tempdimb{\vfil\insertlogo\vfil}
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[wd=.375\paperwidth,ht=\@tempdimb]{section in head/foot}
+        \vbox to\@tempdimb{\vfil\insertsectionnavigation{.375\paperwidth}\vfil}
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[wd=.375\paperwidth,ht=\@tempdimb]{subsection in head/foot}
+        \vbox to\@tempdimb{\vfil\insertsubsectionnavigation{.375\paperwidth}\vfil}
+      \end{beamercolorbox}
+    \fi
+  \fi
+}
+
+\defbeamertemplate*{footline}{usyd split}
+{
+  \ifnum\thepage=1\relax
+    % Empty colourbox on titlepage to retain spacing on subsequent pages
+    \begin{beamercolorbox}[wd=\paperwidth,ht=1em,dp=0.5em]{placeholder}
+    \end{beamercolorbox}
+  \else
+    \leavevmode
+    \begin{beamercolorbox}[center,wd=0.4\paperwidth,ht=1em,dp=0.5em]{author in head/foot}
+      \insertshortauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=0.6\paperwidth,ht=1em,dp=0.5em]{title in head/foot}
+      \hspace{\theme@hpadding}\insertshorttitle\hfill\insertdate\hspace{\theme@hpadding}
+    \end{beamercolorbox}
+  \fi
+  % Leave gap at bottom of slide the same size as at top
+  \vspace{\theme@vpadding}
+}
+
+\mode<all>
