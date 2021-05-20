@@ -1,0 +1,64 @@
+\documentclass[aspectratio=169, 22pt]{beamer}
+
+\makeatletter
+\def\input@path{{../}{examples/}}
+% When theme as submodule use the below line instead
+% \def\input@path{{usyd-beamer-theme/}}
+\makeatother
+
+\usepackage{amsmath}
+
+\title{The $\tau$ vs $\pi$ argument is really long and interesting}
+\subtitle{It is mostly a notational argument}
+\date{\today}
+\author[Malcolm]{Malcolm Ramsay}
+
+\usetheme[split]{usyd}
+
+\graphicspath{{../}}
+
+\titlegraphic{USYDTitle}
+\titlegraphicbackground{usydred}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+\section{Argument}
+\subsection{In favour of $\pi$}
+
+\begin{frame}{Why use $\tau$ when there is $\pi$}
+  \begin{block}{Theorem}
+    $\tau$ is great when \href{http://blah}{dealing} with circles
+  \end{block}
+
+  \begin{enumerate}
+    \item<1-> Fourier transforms
+      \begin{equation}
+        \hat f(\zeta) = \int_{-\infty}^{+\infty} f(x) e^{-2\pi ix\zeta} dx
+      \end{equation}
+    \item<2-> A simple pendulum
+      \begin{equation}
+        T \approx 2\pi \sqrt{\frac{L}{g}}
+      \end{equation}
+  \end{enumerate}
+\end{frame}
+
+\subsection{In favour of $\tau$}
+\begin{frame}{In favour of $\tau$}
+  \begin{enumerate}
+    \item $\tau$ is a popular topic on \url{youtube.com}
+  \end{enumerate}
+\end{frame}
+
+\section{Reasoning}
+
+\begin{frame}{An excuse to write equations}
+  \begin{enumerate}
+    \item Highlight what \LaTeX is best at
+  \end{enumerate}
+\end{frame}
+
+\end{document}

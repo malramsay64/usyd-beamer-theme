@@ -12,6 +12,7 @@ The latest examples can be downloaded from the [releases page][releases] or dire
 below.
 
 - [Main theme][example.pdf]
+- [Split theme][example-split.pdf]
 - [Logobar theme][example-logobar.pdf]
 - [Poster theme][poster.pdf]
 
@@ -92,6 +93,20 @@ subsections don't make sense.
 
 This theme variation was contributed by [Joel Nothman](https://github.com/jnothman).
 
+### Split Theme
+Another variation on the theme which includes navigation elements in a bar at
+the top of each slide. It is based on the Beamer `split` outer theme. This
+option includes both section and subsection navigation and is useful for longer
+presentations.
+
+This option is enabled by passing the `split` option when specifying the theme.
+
+    \usetheme[split]{usyd}
+
+You can see this theme in action in the [example-split.pdf][] file.
+
+This theme variation was contributed by [Vanja Zecevic](https://github.com/vanja-zecevic).
+
 Poster
 ------
 
@@ -109,4 +124,5 @@ Thanks to these people for their contributions
 [releases]: https://github.com/malramsay64/usyd-beamer-theme/releases/latest
 [example.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.1/example.pdf
 [example-logobar.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.1/example-logobar.pdf
+[example-split.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.1/example-split.pdf
 [poster.pdf]: https://github.com/malramsay64/usyd-beamer-theme/releases/download/v0.1.1/poster.pdf
